@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author nzoel
  */
-public class Cipher extends Application {
+public class CipherGit extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
