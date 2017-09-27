@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author nzoel
  */
-public class CipherGit extends Application {
+public class Cipher extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -24,6 +24,9 @@ public class CipherGit extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setMinHeight(500);
+        stage.setMinWidth(460);
+        stage.setTitle("Cipher");
         stage.show();
     }
 
