@@ -48,6 +48,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void cipherButton_Click(ActionEvent event) {
+        
     }
     
 }
