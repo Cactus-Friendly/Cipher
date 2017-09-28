@@ -48,7 +48,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void cipherButton_Click(ActionEvent event) {
-        
+        Cipher c = new Cipher(5, "Hello World!", 'e');
+        System.out.println(c.getEncryptedPhrase());
     }
     
 }
