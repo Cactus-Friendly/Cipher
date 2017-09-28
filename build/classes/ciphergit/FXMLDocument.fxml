@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="500.0" minWidth="460.0" prefHeight="500.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ciphergit.FXMLDocumentController">
+   <children>
+      <TextArea fx:id="plainTextField" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="cipherButton" mnemonicParsing="false" onAction="#cipherButton_Click" text="Cipher" />
+            <VBox alignment="CENTER">
+               <children>
+                  <RadioButton fx:id="encryptRadioButton" mnemonicParsing="false" selected="true" text="Encrypt">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="RadioButtons" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="decryptRadioButton" mnemonicParsing="false" text="Decrypt" toggleGroup="$RadioButtons" />
+               </children>
+            </VBox>
+            <Label text="Seed:">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="seedTextBox" prefHeight="39.0" prefWidth="127.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <TextArea fx:id="cipheredTextField" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</VBox>
