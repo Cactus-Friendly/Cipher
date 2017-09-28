@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -48,8 +50,37 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void cipherButton_Click(ActionEvent event) {
-        Cipher c = new Cipher(5, "Hello World!", 'e');
-        System.out.println(c.getEncryptedPhrase());
+        System.out.println(seedTextBox.getText());
+        try {
+            
+            if (!seedTextBox.getText().trim().isEmpty()) {
+                
+                System.out.println("SEED!");
+            
+                if (encryptRadioButton.isSelected()) {
+                
+                    Cipher c  = new Cipher(Integer.parseInt(seedTextBox.getText()), plainTextField.getText(), 'e');
+                    cipheredTextField.setText(c.getEncryptedPhrase());
+                    
+                } else if (decryptRadioButton.isSelected()) {
+            
+                    Cipher c = new Cipher(Integer.parseInt(seedTextBox.getText()), cipheredTextField.getText(), 'd');
+                    plainTextField.setText(c.getDecryptedPhrase());
+                
+                }
+            } else {
+                Alert a = new Alert(AlertType.ERROR);
+                a.setTitle("EMPTY SEED");
+                a.setContentText("The seed text field was left empty!");
+                a.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Alert a = new Alert(AlertType.ERROR);
+            a.setTitle("INVALID SEED");
+            a.setContentText("The seed that was entered into the text field is invalid!");
+            a.show();
+        }
     }
     
 }
