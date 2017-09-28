@@ -28,7 +28,7 @@
                   <Insets />
                </HBox.margin>
             </Label>
-            <TextField fx:id="seedTextBox" prefHeight="39.0" prefWidth="127.0" promptText="Default 0">
+            <TextField fx:id="seedTextBox" prefHeight="39.0" prefWidth="127.0">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
