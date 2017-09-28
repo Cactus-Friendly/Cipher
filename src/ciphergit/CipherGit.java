@@ -26,7 +26,7 @@ public class CipherGit extends Application {
         stage.setScene(scene);
         stage.setMinHeight(500);
         stage.setMinWidth(460);
-        stage.setTitle("Cipher");
+        stage.setTitle("Cipher")
         stage.show();
     }
 
