@@ -38,8 +38,6 @@ public class Cipher {
             }
         }
         
-        System.out.println(this.cipher);
-        
         if (type == 'e') {
             
             encrypt();
@@ -73,6 +71,7 @@ public class Cipher {
                 
             }
         }
+        cipher = null;
     }
     
     private void decrypt() {
@@ -96,6 +95,7 @@ public class Cipher {
                 
             }
         }
+        cipher = null;
     }
     
     public String getEncryptedPhrase() {

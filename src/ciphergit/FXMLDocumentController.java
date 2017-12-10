@@ -50,12 +50,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void cipherButton_Click(ActionEvent event) {
-        System.out.println(seedTextBox.getText());
         try {
             
             if (!seedTextBox.getText().trim().isEmpty()) {
-                
-                System.out.println("SEED!");
             
                 if (encryptRadioButton.isSelected()) {
                 
