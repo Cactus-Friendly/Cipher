@@ -56,12 +56,12 @@ public class FXMLDocumentController implements Initializable {
             
                 if (encryptRadioButton.isSelected()) {
                 
-                    Cipher c  = new Cipher(Integer.parseInt(seedTextBox.getText()), plainTextField.getText(), 'e');
+                    Cipher c  = new Cipher(Long.parseLong(seedTextBox.getText()), plainTextField.getText(), 'e');
                     cipheredTextField.setText(c.getEncryptedPhrase());
                     
                 } else if (decryptRadioButton.isSelected()) {
             
-                    Cipher c = new Cipher(Integer.parseInt(seedTextBox.getText()), cipheredTextField.getText(), 'd');
+                    Cipher c = new Cipher(Long.parseLong(seedTextBox.getText()), cipheredTextField.getText(), 'd');
                     plainTextField.setText(c.getDecryptedPhrase());
                 
                 }
@@ -75,7 +75,7 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
             Alert a = new Alert(AlertType.ERROR);
             a.setTitle("INVALID SEED");
-            a.setContentText("The seed that was entered into the text field is invalid!");
+            a.setContentText("The seed that was entered into the text field is invalid! It must be a number!");
             a.show();
         }
     }

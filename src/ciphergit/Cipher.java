@@ -19,7 +19,7 @@ public class Cipher {
     private String phrase = "";
     private String endPhrase = "";
     
-    Cipher (int seed, String phrase, char type) {
+    Cipher (long seed, String phrase, char type) {
         
         Random rand = new Random(seed);
         this.phrase = phrase;
@@ -72,6 +72,7 @@ public class Cipher {
             }
         }
         cipher = null;
+        phrase = null;
     }
     
     private void decrypt() {
@@ -96,6 +97,7 @@ public class Cipher {
             }
         }
         cipher = null;
+        phrase = null;
     }
     
     public String getEncryptedPhrase() {
